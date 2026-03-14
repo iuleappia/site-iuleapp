@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Home</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f6f8;
+margin:0;
+text-align:center;
+}
+
+/* MENU */
+
+.menu{
+background:#1e3a8a;
+padding:14px 20px;
+}
+
+.logo{
+color:#fff;
+font-size:20px;
+font-weight:bold;
+max-width:1200px;
+margin:auto;
+text-align:left;
+}
+
+/* CONTAINER CENTRAL */
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+.titulo{
+font-size:22px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.texto{
+font-size:15px;
+color:#555;
+margin-bottom:25px;
+}
+
+/* GRID PRODUTOS */
+
+.produtos{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+margin-top:30px;
+align-items:stretch;
+}
+
+/* CARD */
+
+.card-mini{
+background:white;
+border-radius:14px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+text-align:center;
+padding:22px 16px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+transition:transform 0.2s, box-shadow 0.2s;
+}
+
+.card-mini:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 22px rgba(0,0,0,0.12);
+}
+
+.icone{
+font-size:34px;
+margin-bottom:10px;
+}
+
+.card-mini h4{
+font-size:16px;
+margin-bottom:8px;
+}
+
+.card-mini p{
+font-size:13px;
+color:#666;
+margin-bottom:14px;
+line-height:1.4;
+}
+
+/* BOTÕES */
+
+.card-mini a{
+display:block;
+color:white;
+text-align:center;
+padding:9px;
+border-radius:8px;
+text-decoration:none;
+font-size:13px;
+font-weight:bold;
+transition:transform 0.1s;
+}
+
+.produtos .card-mini:nth-child(1) a{ background:#2e9e44; }
+.produtos .card-mini:nth-child(2) a{ background:#1e88e5; }
+.produtos .card-mini:nth-child(3) a{ background:#ff6f00; }
+.produtos .card-mini:nth-child(4) a{ background:#8e24aa; }
+
+.card-mini a:active{
+transform:scale(0.96);
+}
+
+/* BENEFÍCIOS */
+
+.beneficios{
+margin-top:30px;
+}
+
+.beneficios h2{
+font-size:22px;
+margin-bottom:20px;
+}
+
+.beneficios-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.beneficio{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+.beneficio span{
+font-size:30px;
+display:block;
+margin-bottom:10px;
+}
+
+.beneficio h4{
+font-size:16px;
+margin-bottom:6px;
+}
+
+.beneficio p{
+font-size:13px;
+color:#666;
+line-height:1.4;
+}
+
+/* CARD PRINCIPAL */
+
+.card-produto{
+background:white;
+border-radius:14px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,0.12);
+margin-top:30px;
+text-align:left;
+}
+
+.imagem-produto{
+position:relative;
+}
+
+.imagem-produto img{
+width:100%;
+height:200px;
+object-fit:cover;
+display:block;
+}
+
+.badge{
+position:absolute;
+top:12px;
+left:12px;
+background:#ff8c00;
+color:white;
+font-size:13px;
+padding:6px 10px;
+border-radius:8px;
+font-weight:bold;
+}
+
+.conteudo-produto{
+padding:18px;
+}
+
+.conteudo-produto h3{
+font-size:18px;
+margin-bottom:6px;
+}
+
+.desc{
+font-size:14px;
+color:#666;
+margin-bottom:10px;
+}
+
+.avaliacao{
+color:#f5a623;
+font-size:14px;
+margin-bottom:6px;
+}
+
+.avaliacao span{
+color:#333;
+margin-left:5px;
+}
+
+.leitores{
+font-size:13px;
+color:#555;
+margin-bottom:10px;
+}
+
+.preco-antigo{
+text-decoration:line-through;
+color:#777;
+font-size:14px;
+}
+
+.preco-novo{
+font-size:22px;
+font-weight:bold;
+margin:6px 0 14px 0;
+}
+
+.btn-comprar{
+display:block;
+background:#2e9e44;
+color:white;
+text-align:center;
+padding:12px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+transition:transform 0.1s;
+}
+
+.btn-comprar:active{
+transform:scale(0.96);
+}
+
+/* GRID CARDS GRANDES */
+
+.cards-destaque{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:10px;
+}
+
+/* FOOTER */
+
+.footer{
+margin-top:20px;
+background:#111;
+color:#ddd;
+padding:40px 20px;
+width:100%;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+max-width:1200px;
+margin:auto;
+}
+
+.footer h3{
+font-size:16px;
+margin-bottom:10px;
+color:#fff;
+}
+
+.footer p{
+font-size:13px;
+line-height:1.6;
+}
+
+.footer a{
+display:block;
+color:#ddd;
+text-decoration:none;
+font-size:13px;
+margin-bottom:6px;
+}
+
+.footer a:hover{
+color:#fff;
+}
+
+.footer-bottom{
+margin-top:25px;
+text-align:center;
+font-size:12px;
+color:#aaa;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:700px){
+
+.produtos{
+grid-template-columns:repeat(2,1fr);
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+}
+
+@media(min-width:700px){
+
+.produtos{
+grid-template-columns:repeat(4,1fr);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="menu">
+<div class="logo">
+IuleApp
+</div>
+</header>
+
+<div class="container">
+
+<div class="titulo">
+Bem-vindo ao Site IuleApp
+</div>
+
+<div class="texto">
+Estude Informática com Ebooks e Cursos Online
+</div>
+
+<div class="produtos">
+
+<div class="card-mini">
+<div class="icone">📚</div>
+<h4>Cursos e eBooks</h4>
+<p>Aprenda Informática e Excel com cursos completos e materiais práticos.</p>
+<a href="app-informatica/cursos.html" target="_blank">Saiba mais</a>
+</div>
+
+<div class="card-mini">
+<div class="icone">📱</div>
+<h4>Aplicativo Informática</h4>
+<p>Estude Informática direto no celular com textos e simulados.</p>
+<a href="https://play.google.com/store/apps/details?id=iule.app.tec.concurso" target="_blank">Baixar</a>
+</div>
+
+<div class="card-mini">
+<div class="icone">📰</div>
+<h4>Postagens</h4>
+<p>Leia conteúdos sobre Informática, tecnologia e dicas úteis.</p>
+<a href="https://iuleapp.com/posts/" target="_blank">Ver postagens</a>
+</div>
+
+<div class="card-mini">
+<div class="icone">📊</div>
+<h4>Funções do Excel</h4>
+<p>Aprenda as principais funções usadas no Excel passo a passo.</p>
+<a href="app-informatica/excel.html" target="_blank">Ver funções</a>
+</div>
+
+</div>
+
+<!-- BENEFÍCIOS -->
+
+<div class="beneficios">
+
+<h2>Por que estudar no IuleApp?</h2>
+
+<div class="beneficios-grid">
+
+<div class="beneficio">
+<span>📚</span>
+<h4>Conteúdo atualizado</h4>
+<p>Materiais desenvolvidos para estudantes e para o mercado de trabalho.</p>
+</div>
+
+<div class="beneficio">
+<span>📱</span>
+<h4>Estude em qualquer lugar</h4>
+<p>Acesse pelo celular, tablet ou computador quando quiser.</p>
+</div>
+
+<div class="beneficio">
+<span>🎯</span>
+<h4>Foco em prática</h4>
+<p>Aulas diretas com exemplos práticos e exercícios.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- CARDS DESTAQUE -->
+
+<div class="cards-destaque">
+
+<div class="card-produto">
+
+<div class="imagem-produto">
+<span class="badge">🔥 Mais vendido</span>
+<img src="img/excel.jpg">
+</div>
+
+<div class="conteudo-produto">
+
+<h3>Bíblia do Excel</h3>
+
+<p class="desc">
+Guia completo com funções e recursos avançados.
+</p>
+
+<div class="avaliacao">
+⭐⭐⭐⭐⭐ <span>5.0</span>
+</div>
+
+<div class="leitores">
+👥 5.412 leitores
+</div>
+
+<div class="preco-antigo">
+R$ 197,00
+</div>
+
+<div class="preco-novo">
+R$ 97,00
+</div>
+
+<a href="https://iuleapp.com/biblia-do-excel-enterprise/" target="_blank" class="btn-comprar">
+Saiba mais
+</a>
+
+</div>
+</div>
+
+<div class="card-produto">
+
+<div class="imagem-produto">
+<span class="badge">💻 Online</span>
+<img src="img/web.jpg">
+</div>
+
+<div class="conteudo-produto">
+
+<h3>Aplicativo Informática</h3>
+
+<p class="desc">
+Estude informática direto no navegador com textos e simulados.
+</p>
+
+<div class="avaliacao">
+⭐⭐⭐⭐⭐ <span>5.0</span>
+</div>
+
+<div class="leitores">
+👥 Estudantes online
+</div>
+
+<div class="leitores">
+Grátis
+</div>
+
+<div class="preco-novo">
+Versão Web
+</div>
+
+<a href="https://iuleapp.netlify.app/app-informatica/" target="_blank" class="btn-comprar">
+Acessar agora
+</a>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+<footer class="footer">
+
+<div class="footer-grid">
+
+<div>
+<h3>Sobre o site</h3>
+<p>
+O IuleApp é uma plataforma com conteúdos de informática,
+Excel, cursos e materiais educativos para estudantes
+e profissionais.
+</p>
+</div>
+
+<div>
+<h3>Contato</h3>
+<p>Email: iuletorresapp@gmail.com</p>
+<p>Site: iuleapp.netlify.app</p>
+</div>
+
+<div>
+<h3>Redes sociais</h3>
+<a href="https://www.youtube.com/@iuleapp" target="_blank">▶️ YouTube</a>
+<a href="https://www.instagram.com/iuleappexcel/" target="_blank">📸 Instagram</a>
+<a href="https://www.facebook.com/iuleappexcel" target="_blank">📘 Facebook</a>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 IuleApp - Todos os direitos reservados
+</div>
+
+</footer>
+
+</body>
+</html>

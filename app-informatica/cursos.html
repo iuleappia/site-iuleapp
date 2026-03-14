@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cursos</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f6f8;
+padding:20px;
+}
+
+/* TÍTULO */
+
+.titulo{
+text-align:center;
+font-size:26px;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.texto{
+text-align:center;
+font-size:15px;
+color:#555;
+margin-bottom:35px;
+}
+
+/* GRID RESPONSIVA */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+max-width:1100px;
+margin:auto;
+}
+
+/* SEÇÕES */
+
+.secao h2{
+margin-bottom:15px;
+font-size:18px;
+}
+
+/* CARD */
+
+.card{
+background:white;
+border-radius:14px;
+overflow:hidden;
+box-shadow:0 6px 14px rgba(0,0,0,0.08);
+position:relative;
+transition:0.25s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 22px rgba(0,0,0,0.12);
+}
+
+/* IMAGEM */
+
+.card img{
+width:100%;
+aspect-ratio:16/9;
+object-fit:cover;
+}
+
+/* SELO */
+
+.selo{
+position:absolute;
+top:10px;
+left:10px;
+background:#ff9800;
+color:white;
+font-size:12px;
+padding:5px 9px;
+border-radius:6px;
+font-weight:bold;
+}
+
+/* CONTEÚDO */
+
+.conteudo{
+padding:16px;
+}
+
+.nome{
+font-size:16px;
+font-weight:bold;
+margin-bottom:6px;
+}
+
+.desc{
+font-size:14px;
+color:#666;
+margin-bottom:10px;
+}
+
+/* AVALIAÇÃO */
+
+.avaliacao{
+font-size:13px;
+margin-bottom:8px;
+color:#f39c12;
+}
+
+.alunos{
+font-size:12px;
+color:#777;
+margin-bottom:10px;
+}
+
+/* PREÇO */
+
+.preco-antigo{
+font-size:13px;
+color:#888;
+text-decoration:line-through;
+}
+
+.preco{
+font-size:18px;
+font-weight:bold;
+margin-bottom:12px;
+}
+
+/* BOTÃO */
+
+.botao{
+display:block;
+text-align:center;
+padding:11px;
+border-radius:8px;
+font-size:14px;
+font-weight:bold;
+text-decoration:none;
+color:white;
+transition:0.15s;
+}
+
+.botao:hover{
+filter:brightness(1.1);
+}
+
+.botao:active{
+transform:scale(0.93);
+}
+
+/* BOTÃO DESTAQUE */
+
+.destaque{
+animation:pulsar 2s infinite;
+}
+
+/* ANIMAÇÃO */
+
+@keyframes pulsar{
+
+0%{
+box-shadow:0 0 0 0 rgba(0,0,0,0.2);
+}
+
+70%{
+box-shadow:0 0 0 12px rgba(0,0,0,0);
+}
+
+100%{
+box-shadow:0 0 0 0 rgba(0,0,0,0);
+}
+
+}
+
+/* CORES */
+
+.excel{background:#1f8f4e;}
+.word{background:#185abd;}
+.power{background:#d24726;}
+.vba{background:#6b3fa0;}
+.powerbi{background:#f2c811;}
+.biblia{background:#2f9e44;}
+
+</style>
+</head>
+
+<body>
+
+<div class="titulo">
+🎓 Plataforma de Cursos
+</div>
+
+<div class="texto">
+Aprenda tecnologia, análise de dados e automação com cursos completos.
+</div>
+
+<div class="grid">
+
+<!-- EBOOKS -->
+
+<div class="secao">
+
+<h2>📚 eBooks</h2>
+
+<div class="card">
+
+<div class="selo">🔥 Mais vendido</div>
+
+<img src="img/excel.jpg">
+
+<div class="conteudo">
+
+<div class="nome">Bíblia do Excel</div>
+<div class="desc">Guia completo com funções e recursos avançados.</div>
+
+<div class="avaliacao">⭐⭐⭐⭐⭐ 5.0</div>
+<div class="alunos">👨‍🎓 5.412 leitores</div>
+
+<div class="preco-antigo">R$ 197,00</div>
+<div class="preco">R$ 97,00</div>
+
+<a class="botao biblia destaque" href="https://iuleapp.com/biblia-do-excel-enterprise/" target="_blank" rel="noopener noreferrer">Saiba mais</a>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="img/vba.jpg">
+
+<div class="conteudo">
+
+<div class="nome">VBA Prodigy</div>
+<div class="desc">Aprenda automação no Excel com macros e VBA.</div>
+
+<div class="avaliacao">⭐⭐⭐⭐⭐ 4.8</div>
+<div class="alunos">👨‍🎓 1.850 leitores</div>
+
+<div class="preco-antigo">R$ 129,90</div>
+<div class="preco">R$ 79,90</div>
+
+<a class="botao vba" href="https://go.hotmart.com/N81281096I" target="_blank" rel="noopener noreferrer">Saiba mais</a>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="img/power.jpg">
+
+<div class="conteudo">
+
+<div class="nome">Power BI</div>
+<div class="desc">Aprenda a criar dashboards profissionais e analisar dados.</div>
+
+<div class="avaliacao">⭐⭐⭐⭐⭐ 4.9</div>
+<div class="alunos">👨‍🎓 2.430 leitores</div>
+
+<div class="preco-antigo">R$ 197,00</div>
+<div class="preco">R$ 97,00</div>
+
+<a class="botao powerbi" href="https://go.hotmart.com/J73959713Y" target="_blank" rel="noopener noreferrer">Saiba mais</a>
+
+</div>
+</div>
+
+</div>
+
+<!-- VIDEOAULAS -->
+
+<div class="secao">
+
+<h2>🎥 Videoaulas</h2>
+
+<div class="card">
+
+<img src="img/excel2.jpg">
+
+<div class="conteudo">
+
+<div class="nome">Sniper de Excel</div>
+<div class="desc">Aprenda fórmulas, gráficos e automações.</div>
+
+<div class="avaliacao">⭐⭐⭐⭐⭐ 4.9</div>
+<div class="alunos">👨‍🎓 3.245 alunos</div>
+
+<div class="preco-antigo">R$ 297,00</div>
+<div class="preco">R$ 197,00</div>
+
+<a class="botao excel" href="https://go.hotmart.com/J47853748S" target="_blank" rel="noopener noreferrer">Saiba mais</a>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="img/word.jpg">
+
+<div class="conteudo">
+
+<div class="nome">Curso de Word</div>
+<div class="desc">Crie documentos profissionais.</div>
+
+<div class="avaliacao">⭐⭐⭐⭐⭐ 4.8</div>
+<div class="alunos">👨‍🎓 1.842 alunos</div>
+
+<div class="preco-antigo">R$ 297,00</div>
+<div class="preco">R$ 197,00</div>
+
+<a class="botao word" href="https://go.hotmart.com/S68793259J" target="_blank" rel="noopener noreferrer">Saiba mais</a>
+
+</div>
+</div>
+
+<div class="card">
+
+<img src="img/point.jpg">
+
+<div class="conteudo">
+
+<div class="nome">Curso de PowerPoint</div>
+<div class="desc">Aprenda a criar apresentações profissionais e impactantes.</div>
+
+<div class="avaliacao">⭐⭐⭐⭐⭐ 4.8</div>
+<div class="alunos">👨‍🎓 1.210 alunos</div>
+
+<div class="preco-antigo">R$ 297,00</div>
+<div class="preco">R$ 197,00</div>
+
+<a class="botao power" href="https://go.hotmart.com/W68793260O" target="_blank" rel="noopener noreferrer">Saiba mais</a>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
