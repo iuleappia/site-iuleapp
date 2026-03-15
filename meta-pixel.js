@@ -1,0 +1,94 @@
+// META PIXEL + EVENTOS
+
+(function () {
+
+    // CARREGAR PIXEL
+    !function(f,b,e,v,n,t,s)
+    {
+        if(f.fbq)return;
+        n=f.fbq=function(){
+            n.callMethod ?
+            n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+        };
+
+        if(!f._fbq)f._fbq=n;
+
+        n.push=n;
+        n.loaded=!0;
+        n.version='2.0';
+        n.queue=[];
+
+        t=b.createElement(e);
+        t.async=!0;
+        t.src=v;
+
+        s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s);
+
+    }(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    // ID DO PIXEL
+    fbq('init', '1255142006053516');
+
+    // PAGE VIEW
+    fbq('track', 'PageView');
+
+
+    // VIEW CONTENT
+    document.addEventListener("DOMContentLoaded", function(){
+
+        fbq('track', 'ViewContent',{
+            content_name:'Ebook Informática para Concurso',
+            content_category:'ebook',
+            value:67.90,
+            currency:'BRL'
+        });
+
+    });
+
+
+    // SCROLL 50%
+
+    let scrollTracked = false;
+
+    window.addEventListener("scroll",function(){
+
+        if(scrollTracked) return;
+
+        let scrollPercent =
+        (window.scrollY + window.innerHeight) /
+        document.documentElement.scrollHeight;
+
+        if(scrollPercent > 0.5){
+
+            scrollTracked = true;
+
+            fbq('trackCustom','ScrollPage',{
+                percent:50
+            });
+
+        }
+
+    });
+
+
+    // CLIQUE NO BOTÃO DE COMPRA
+
+    document.addEventListener("click",function(e){
+
+        const btn = e.target.closest(".btn");
+
+        if(btn){
+
+            fbq('track','InitiateCheckout',{
+                content_name:'Ebook Informática para Concurso',
+                value:67.90,
+                currency:'BRL'
+            });
+
+        }
+
+    });
+
+})();
