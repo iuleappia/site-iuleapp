@@ -1,16 +1,16 @@
 <?php
 
-$data = file_get_contents("php://input");
-$evento = json_decode($data, true);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-if ($evento["event"] == "PURCHASE_APPROVED") {
+    $data = file_get_contents("php://input");
+    $json = json_decode($data, true);
 
-    $email = $evento["data"]["buyer"]["email"];
-    $valor = $evento["data"]["purchase"]["price"]["value"];
+    file_put_contents("log.txt", $data . PHP_EOL, FILE_APPEND);
 
-    file_put_contents("vendas.txt", $email . " - " . $valor . PHP_EOL, FILE_APPEND);
+    http_response_code(200);
+    echo "OK";
 
+} else {
+    http_response_code(405);
+    echo "Method Not Allowed";
 }
-
-http_response_code(200);
-?>
