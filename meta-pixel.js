@@ -73,18 +73,20 @@
     });
 
 
-    // CLIQUE NO BOTÃO DE COMPRA
+    // EVENTO BÍBLIA DO EXCEL
 
     document.addEventListener("click",function(e){
 
-        const btn = e.target.closest(".btn");
+        const link = e.target.closest("a");
 
-        if(btn){
+        if(!link) return;
 
-            fbq('track','InitiateCheckout',{
-                content_name:'Ebook Informática para Concurso',
-                value:67.90,
-                currency:'BRL'
+        const url = link.href;
+
+        if(url === "https://go.hotmart.com/B41563429U"){
+
+            fbq('trackCustom','Biblia_do_Excel',{
+                produto:'Bíblia do Excel'
             });
 
         }
