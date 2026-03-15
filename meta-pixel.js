@@ -35,19 +35,6 @@
     fbq('track', 'PageView');
 
 
-    // VIEW CONTENT
-    document.addEventListener("DOMContentLoaded", function(){
-
-        fbq('track', 'ViewContent',{
-            content_name:'Ebook Informática para Concurso',
-            content_category:'ebook',
-            value:67.90,
-            currency:'BRL'
-        });
-
-    });
-
-
     // SCROLL 50%
 
     let scrollTracked = false;
