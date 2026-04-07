@@ -29,7 +29,10 @@
     'https://connect.facebook.net/en_US/fbevents.js');
 
     // ID DO PIXEL
-    fbq('init', '1255142006053516');
+    fbq('init', '1255142006053516', {
+  em: 'email@email.com',   // Values will be hashed automatically by the pixel using SHA-256
+  ph: '1234567890',
+    });
 
     // PAGE VIEW
     fbq('track', 'PageView');
