@@ -34,6 +34,15 @@ event_label:texto,
 link_url:url
 });
 
+// 🔥 NOVO EVENTO ESPECÍFICO
+if(url === "https://go.hotmart.com/B41563429U"){
+gtag("event","Biblia_do_Excel",{
+event_category:"conversao",
+event_label:texto,
+link_url:url
+});
+}
+
 });
 
 });
