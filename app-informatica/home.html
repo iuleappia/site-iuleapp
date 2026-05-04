@@ -46,7 +46,7 @@ grid-template-columns:1fr;
 gap:18px;
 }
 
-/* BLOCO ESTILO WIDGET */
+/* BLOCO */
 
 .bloco{
 background:#ffffff;
@@ -58,17 +58,9 @@ animation:aparecer 0.5s ease;
 border-left:5px solid #2e9e44;
 }
 
-.bloco:nth-child(2){
-border-left:5px solid #2b7cff;
-}
-
-.bloco:nth-child(3){
-border-left:5px solid #ff8c00;
-}
-
-.bloco:nth-child(4){
-border-left:5px solid #8a2be2;
-}
+.bloco:nth-child(2){border-left:5px solid #2b7cff;}
+.bloco:nth-child(3){border-left:5px solid #ff8c00;}
+.bloco:nth-child(4){border-left:5px solid #8a2be2;}
 
 .bloco h3{
 font-size:17px;
@@ -81,14 +73,23 @@ color:#555;
 line-height:1.4;
 }
 
+/* CONTAINER DOS CARDS */
+
+.cards-container{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
 /* CARD PRODUTO */
 
 .card-produto{
+flex:1 1 calc(50% - 20px);
 background:white;
 border-radius:14px;
 overflow:hidden;
 box-shadow:0 8px 20px rgba(0,0,0,0.12);
-margin-top:30px;
 text-align:left;
 animation:aparecer 0.6s ease;
 }
@@ -193,6 +194,12 @@ grid-template-columns:1fr 1fr;
 }
 }
 
+@media(max-width:768px){
+.card-produto{
+flex:1 1 100%;
+}
+}
+
 /* ANIMAÇÃO */
 
 @keyframes aparecer{
@@ -243,20 +250,19 @@ Use o menu inferior para acessar disciplinas, simulados, excel e cursos.
 
 </div>
 
-<!-- CARD BÍBLIA DO EXCEL -->
+<!-- CARDS PRODUTOS -->
 
+<div class="cards-container">
+
+<!-- CARD 1 -->
 <div class="card-produto">
 
 <div class="imagem-produto">
-
 <span class="badge">🔥 Mais vendido</span>
-
 <img src="img/excel.jpg">
-
 </div>
 
 <div class="conteudo-produto">
-
 <h3>Bíblia do Excel</h3>
 
 <p class="desc">
@@ -264,11 +270,11 @@ Guia completo com funções e recursos avançados.
 </p>
 
 <div class="avaliacao">
-⭐⭐⭐⭐⭐ <span>5.0</span>
+⭐⭐⭐⭐⭐ <span>4.7</span>
 </div>
 
 <div class="leitores">
-👥 5.412 leitores
+👥 20.412 alunos
 </div>
 
 <div class="preco-antigo">
@@ -279,29 +285,58 @@ R$ 197,00
 R$ 97,00
 </div>
 
-<div style="display: flex; gap: 10px; width: 100%;">
-  
-  <a href="https://go.hotmart.com/B41563429U" target="_blank" class="btn-comprar" style="flex: 1; text-align: center;">
-    Português
-  </a>
-
-  <a href="https://go.hotmart.com/D79241819H" target="_blank" class="btn-comprar" style="flex: 1; text-align: center;">
-    Espanhol
-  </a>
-
-  <a href="https://go.hotmart.com/E75160026F" target="_blank" class="btn-comprar" style="flex: 1; text-align: center;">
-    Inglês
-  </a>
-
+<div style="display:flex; gap:10px;">
+<a href="https://go.hotmart.com/B41563429U" target="_blank" class="btn-comprar" style="flex:1;">Português</a>
+<a href="https://go.hotmart.com/D79241819H" target="_blank" class="btn-comprar" style="flex:1;">Espanhol</a>
+<a href="https://go.hotmart.com/E75160026F" target="_blank" class="btn-comprar" style="flex:1;">Inglês</a>
 </div>
 
 </div>
+</div>
+
+<!-- CARD 2 -->
+<div class="card-produto">
+
+<div class="imagem-produto">
+<span class="badge">🔥 Google Play</span>
+<img src="img/vba.jpg">
+</div>
+
+<div class="conteudo-produto">
+<h3>ebook de Informática Completo</h3>
+
+<p class="desc">
+Do básico ao avançado para estudo e mercado de trabalho.
+</p>
+
+<div class="avaliacao">
+⭐⭐⭐⭐⭐ <span>4.8</span>
+</div>
+
+<div class="leitores">
+👥 3.412 alunos
+</div>
+
+<div class="preco-antigo">
+R$ 67,90
+</div>
+
+<div class="preco-novo">
+R$ 19,90
+</div>
+
+<div style="display:flex; gap:10px;">
+<a href="https://play.google.com/store/books/details?id=zrqpEQAAQBAJ" target="_blank" class="btn-comprar" style="flex:1;">Saiba mais</a>
+</div>
+
+</div>
+</div>
+
 </div>
 
 <script>
 
 /* DICAS */
-
 const dicas=[
 "Ctrl + C copia e Ctrl + V cola.",
 "Ctrl + Z desfaz a última ação.",
@@ -311,7 +346,6 @@ const dicas=[
 ];
 
 /* EXCEL */
-
 const excel=[
 "SOMA() → soma valores. Ex: =SOMA(A1:A10)",
 "MÉDIA() → calcula média. Ex: =MÉDIA(A1:A10)",
@@ -321,7 +355,6 @@ const excel=[
 ];
 
 /* DISCIPLINAS */
-
 const disciplinas=[
 "💻 Introdução à Informática",
 "🖥 Hardware",
@@ -334,7 +367,6 @@ const disciplinas=[
 ];
 
 /* CURIOSIDADES */
-
 const curiosidades=[
 "Um byte é formado por 8 bits.",
 "O primeiro computador eletrônico foi criado em 1946.",
@@ -361,7 +393,6 @@ escolhidas[0]+"<br>"+escolhidas[1];
 
 </script>
 
-  <!-- META PIXEL + EVENTOS -->
 <script src="../meta-pixel.js"></script>
 
 </body>
