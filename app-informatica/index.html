@@ -8,7 +8,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>App Informática</title>
+<title>App de Informática - IuleApp</title>
+<meta name="description" content="Acesse o app de estudos de informática do IuleApp: disciplinas, simulados, funções do Excel e cursos em português.">
+<meta name="keywords" content="app de informática, estudos de TI, simulado online, funções do excel, disciplinas de informática">
+<link rel="canonical" href="https://iuleappia.github.io/site-iuleapp/app-informatica/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="IuleApp">
+<meta property="og:title" content="App de Informática - IuleApp">
+<meta property="og:description" content="Acesse o app de estudos de informática do IuleApp: disciplinas, simulados, funções do Excel e cursos em português.">
+<meta property="og:url" content="https://iuleappia.github.io/site-iuleapp/app-informatica/">
+<meta property="og:image" content="https://iuleappia.github.io/site-iuleapp/img/capa.jpg">
 
 <style>
 
@@ -37,12 +46,35 @@ body{
   color:white;
   display:flex;
   align-items:center;
-  justify-content:flex-start;
+  justify-content:space-between;
   padding-left:15px;
+  padding-right:10px;
   font-size:18px;
   font-weight:bold;
   box-shadow:0 2px 5px rgba(0,0,0,0.2);
   z-index:1000;
+}
+
+/* IDIOMAS */
+
+.idiomas{
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+.idiomas a{
+  color:white;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:normal;
+  padding:4px 7px;
+  border-radius:6px;
+}
+
+.idiomas a.ativo{
+  background:rgba(255,255,255,0.25);
+  font-weight:bold;
 }
 
 /* CONTEÚDO */
@@ -154,8 +186,13 @@ iframe{
 <body>
 
 <!-- TOPO -->
-<div class="topo" id="tituloPagina">
-Informática
+<div class="topo">
+  <span id="tituloPagina">Informática</span>
+  <div class="idiomas">
+    <a href="index.html" class="ativo" onclick="localStorage.setItem('userLang','pt')">🇧🇷 PT</a>
+    <a href="es/index.html" onclick="localStorage.setItem('userLang','es')">🇪🇸 ES</a>
+    <a href="en/index.html" onclick="localStorage.setItem('userLang','en')">🇺🇸 EN</a>
+  </div>
 </div>
 
 <!-- APP -->
