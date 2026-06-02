@@ -8,7 +8,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Excel & Cia</title>
+<title>Excel & Cia - Cursos de Excel, Word, PowerPoint e Power BI</title>
+<meta name="description" content="Descubra os melhores cursos de Excel, Word e PowerPoint. Bíblia do Excel, cursos em videoaulas, Power BI e VBA para dominar o pacote Office.">
+<meta name="keywords" content="curso de excel, bíblia do excel, curso de word, powerpoint, power bi, vba, office">
+<link rel="canonical" href="https://iuleappia.github.io/site-iuleapp/excel-e-cia/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="IuleApp">
+<meta property="og:title" content="Excel & Cia - Cursos de Excel, Word, PowerPoint e Power BI">
+<meta property="og:description" content="Descubra os melhores cursos de Excel, Word e PowerPoint. Bíblia do Excel, cursos em videoaulas, Power BI e VBA para dominar o pacote Office.">
+<meta property="og:url" content="https://iuleappia.github.io/site-iuleapp/excel-e-cia/">
+<meta property="og:image" content="https://iuleappia.github.io/site-iuleapp/img/excel.jpg">
 
 <style>
 
@@ -22,6 +31,9 @@ font-family:Arial, Helvetica, sans-serif;
 body{
 background:#f4f6f8;
 text-align:center;
+min-height:100vh;
+display:flex;
+flex-direction:column;
 }
 
 .menu{
@@ -29,19 +41,50 @@ background:#2e9e44;
 padding:14px 20px;
 }
 
+.logo-bar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1200px;
+margin:auto;
+}
+
 .logo{
 color:#fff;
 font-size:20px;
 font-weight:bold;
-max-width:1200px;
-margin:auto;
-text-align:left;
+}
+
+.idiomas{
+display:flex;
+gap:6px;
+}
+
+.lang-btn{
+color:rgba(255,255,255,0.7);
+text-decoration:none;
+font-size:13px;
+font-weight:bold;
+padding:4px 8px;
+border-radius:6px;
+transition:background 0.2s;
+}
+
+.lang-btn:hover{
+background:rgba(255,255,255,0.15);
+color:#fff;
+}
+
+.lang-btn.active{
+background:rgba(255,255,255,0.25);
+color:#fff;
 }
 
 .container{
 max-width:1200px;
 margin:auto;
 padding:20px;
+flex:1;
 }
 
 .cards-destaque{
@@ -201,12 +244,27 @@ grid-template-columns:1fr;
 }
 
 </style>
+<script>
+(function(){
+  if(localStorage.getItem('userLang')) return;
+  var lang=(navigator.language||navigator.userLanguage||'').toLowerCase();
+  if(lang.startsWith('es')) window.location.replace('../es/excel-e-cia/index.html');
+  else if(lang.startsWith('en')) window.location.replace('../en/excel-e-cia/index.html');
+})();
+</script>
 </head>
 
 <body>
 
 <header class="menu">
+<div class="logo-bar">
 <div class="logo">Excel & Cia</div>
+<div class="idiomas">
+<a href="index.html" class="lang-btn active" onclick="localStorage.setItem('userLang','pt')">🇧🇷 PT</a>
+<a href="../es/excel-e-cia/index.html" class="lang-btn" onclick="localStorage.setItem('userLang','es')">🇪🇸 ES</a>
+<a href="../en/excel-e-cia/index.html" class="lang-btn" onclick="localStorage.setItem('userLang','en')">🇺🇸 EN</a>
+</div>
+</div>
 </header>
 
 <div class="container">
@@ -247,59 +305,6 @@ grid-template-columns:1fr;
 </div>
 </div>
 
-<!-- CARD 3 -->
-<div class="card-produto">
-<div class="imagem-produto">
-<span class="badge">🇪🇸 Español</span>
-<img src="capa.jpg">
-</div>
-<div class="conteudo-produto">
-<h3>📚 Ebook de Informática (Español)</h3>
-<p class="desc">Del básico al avanzado para estudio y mercado de trabajo. Hotmart.</p>
-<div class="avaliacao">⭐⭐⭐⭐⭐ 4.8</div>
-<div class="leitores">👥 1.812 estudiantes</div>
-<div class="botoes">
-<a href="https://pay.hotmart.com/H105774995T?checkoutMode=10" target="_blank" class="btn btn-comprar">Comprar</a>
-</div>
-</div>
-</div>
-
-<!-- CARD 4 -->
-<div class="card-produto">
-<div class="imagem-produto">
-<span class="badge">🚀 Popular</span>
-<img src="excel.jpg">
-</div>
-<div class="conteudo-produto">
-<h3>Biblia de Excel (🇪🇸 Español)</h3>
-<p class="desc">Guía completa con funciones y recursos avanzados.</p>
-<div class="avaliacao">⭐⭐⭐⭐⭐ 5.0</div>
-<div class="leitores">👥 5.717 estudiantes</div>
-<div class="botoes">
-<a href="https://go.hotmart.com/D79241819H" target="_blank" class="btn btn-info">Saber más</a>
-<a href="https://go.hotmart.com/D79241819H?ap=67c9" target="_blank" class="btn btn-comprar">Comprar</a>
-</div>
-</div>
-</div>
-
-<!-- CARD 5 -->
-<div class="card-produto">
-<div class="imagem-produto">
-<span class="badge">💡 Featured</span>
-<img src="excel.jpg">
-</div>
-<div class="conteudo-produto">
-<h3>Excel Bible (🇺🇸 English)</h3>
-<p class="desc">Complete guide with advanced functions and features.</p>
-<div class="avaliacao">⭐⭐⭐⭐⭐ 4.7</div>
-<div class="leitores">👥 4.618 students</div>
-<div class="botoes">
-<a href="https://go.hotmart.com/E75160026F" target="_blank" class="btn btn-info">Learn more</a>
-<a href="https://go.hotmart.com/E75160026F?ap=71ac" target="_blank" class="btn btn-comprar">Buy now</a>
-</div>
-</div>
-</div>
-
 <!-- CARD 6 -->
 <div class="card-produto">
 <div class="imagem-produto">
@@ -311,8 +316,7 @@ grid-template-columns:1fr;
 <div class="avaliacao">⭐⭐⭐⭐⭐ 4.5</div>
 <div class="leitores">👥 2.536 alunos</div>
 <div class="botoes">
-<a href="https://go.hotmart.com/J73959713Y" target="_blank" class="btn btn-info">Português</a>
-<a href="https://go.hotmart.com/J75949679W" target="_blank" class="btn btn-comprar">English</a>
+<a href="https://go.hotmart.com/J73959713Y" target="_blank" class="btn btn-info">Saiba mais</a>
 </div>
 </div>
 </div>
@@ -328,8 +332,7 @@ grid-template-columns:1fr;
 <div class="avaliacao">⭐⭐⭐⭐⭐ 5.0</div>
 <div class="leitores">👥 3.316 alunos</div>
 <div class="botoes">
-<a href="https://go.hotmart.com/N81281096I" target="_blank" class="btn btn-info">Português</a>
-<a href="https://go.hotmart.com/O82621558R" target="_blank" class="btn btn-comprar">English</a>
+<a href="https://go.hotmart.com/N81281096I" target="_blank" class="btn btn-info">Saiba mais</a>
 </div>
 </div>
 </div>
